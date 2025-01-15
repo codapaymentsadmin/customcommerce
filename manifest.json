@@ -2,9 +2,8 @@
   "name": "OTT Commerce Theme",
   "author": "Reza Firdaus",
   "version": "1.0.0",
-  "api_version": 2,
+  "api_version": 3,
   "default_locale": "en-us",
-  "license": "MIT",
   "settings": [
     {
       "label": "Brand",
@@ -20,6 +19,12 @@
           "type": "file",
           "description": "Enter the Brand Logo",
           "label": "Brand Logo"
+        },
+        {
+          "identifier": "banner",
+          "type": "file",
+          "description": "Enter the Brand Banner",
+          "label": "Brand Banner"
         }
       ]
     }

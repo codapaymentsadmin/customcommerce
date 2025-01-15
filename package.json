@@ -7,8 +7,8 @@
   "scripts": {
     "start": "vite",
     "preview": "vite preview",
-    "watch": "vite build --watch --emptyOutDir",
-    "build": "vite build --emptyOutDir",
+    "watch": "vite build --watch",
+    "build": "vite build",
     "build:css": "npx tailwindcss -i ./assets/styles/style.css -o ./style.css --watch",
     "preview:zcli": "zcli themes:preview --port=5500"
   },
