@@ -1,27 +1,30 @@
 {
-	"type": "module",
-	"name": "zendesk-template",
-	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
-	"scripts": {
-		"start": "vite",
-		"preview": "vite preview",
-		"watch": "vite build --watch",
-		"build": "vite build",
-		"build:css": "npx tailwindcss -i ./assets/styles/style.css -o ./style.css --watch",
-		"preview:zcli": "zcli themes:preview --port=5500"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"dependencies": {
-		"@zendesk/zcli": "1.0.0-beta.52"
-	},
-	"devDependencies": {
-		"vite": "^6.0.7",
-		"autoprefixer": "^10.4.20",
-		"postcss": "^8.4.49",
-		"tailwindcss": "^3.4.17"
-	}
+  "type": "module",
+  "name": "ottcommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "preview": "vite preview",
+    "watch": "vite build --watch --emptyOutDir",
+    "build": "vite build --emptyOutDir",
+    "build:css": "npx tailwindcss -i ./assets/styles/style.css -o ./style.css --watch",
+    "preview:zcli": "zcli themes:preview --port=5500"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "flag-icons": "^7.2.3"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "daisyui": "^4.12.23",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.0.7"
+  },
+  "packageManager": "pnpm@9.15.3+sha512.1f79bc245a66eb0b07c5d4d83131240774642caaa86ef7d0434ab47c0d16f66b04e21e0c086eb61e62c77efc4d7f7ec071afad3796af64892fae66509173893a"
 }

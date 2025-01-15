@@ -1,0 +1,99 @@
+<section id="banner" class="w-full min-h-[250px] h-full relative">
+	<img
+		src="{{settings.banner}}"
+		alt="banner"
+		class="w-full h-[300px] object-cover"
+	/>
+	<div
+		class="w-full h-full flex items-center justify-center absolute top-0 px-4"
+	>
+		<label
+			class="input h-[32px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-fc-dark/50 bg-white focus:border-fc-green focus:outline-fc-green focus-within:outline-fc-green focus-within:border-fc-green"
+		>
+			{{search
+				instant=true
+				submit=false
+				class="min-w-[250px] w-full md:w-[450px] lg:w-[500px] border-none focus:outline-none text-sm"
+			}}
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 16 16"
+				fill="currentColor"
+				class="w-4 h-4 opacity-70"
+			>
+				<path
+					fill-rule="evenodd"
+					d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</label>
+	</div>
+</section>
+
+<section id="main-content" class="flex-1 min-h-[500px] h-full bg-white py-8">
+  <section
+    class="flex-1 md:max-w-7xl mx-auto flex flex-col px-4 xl:px-0"
+  >
+    <div class="w-full px-4 lg:px-0">
+			<a
+				href="{{page_path 'help_center'}}"
+				class="flex items-center text-sm gap-2 text-fc-dark"
+			>
+				<i class="ph ph-caret-left text-md mt-0.5"></i>
+				{{dc "ea_fcm_hc_back_to_homepage_text"}}
+			</a>
+		</div>
+    <section class="flex-1 flex items-start mt-6">
+      <aside
+        id="promoted-articles-sidebar"
+        class="w-full md:w-[25%] h-max menu rounded-box p-0 gap-2"
+      >
+        <h2 class="text-lg w-full font-semibold">
+          {{t 'promoted_articles'}}
+        </h2>
+        {{#each promoted_articles}}
+          <a
+            href="{{url}}"
+            class="btn flex-1 flex justify-start items-center btn-outline text-fc-dark btn-fc-green border-fc-green hover:border-fc-green hover:bg-fc-green text-start leading-4"
+          >
+            {{title}}
+          </a>
+        {{/each}}
+      </aside>
+      <section class="w-full md:w-[75%] flex flex-col px-4">
+        <h2 class="text-lg w-full font-semibold pb-4">
+          {{t "preview_result_header" query=query}}
+        </h2>
+        {{#if results}}
+          <hr class="w-full border-1.5 border-fc-dark/50" />
+          <div class="w-full flex flex-col gap-4 pt-4">
+            {{#each results}}
+              <div
+                class="flex-1 flex flex-col justify-start"
+              >
+                <a href="{{url}}" class="text-lg text-fc-dark-green hover:text-fc-dark-green/85 transition-colors font-bold">
+                  {{title}}
+                </a>
+                <h6 class="text-xs text-fc-dark mt-1.5">
+                  by
+                  <span class="font-semibold">
+                    {{author.name}} &#x2022; {{date created_at format='medium'}}
+                  </span>
+                </h6>
+                <p class="text-fc-dark mt-1.5">
+                  {{text}}
+                </p>
+              </div>
+            {{/each}}
+          </div>
+          {{pagination}}
+          {{else}}
+          <p class="text-fc-dark font-semibold">
+            {{t 'no_results_unified'}}
+          </p>
+        {{/if}}
+      </section>
+    </section>
+  </div>
+</section>

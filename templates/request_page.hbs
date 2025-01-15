@@ -1,0 +1,89 @@
+<section id="banner" class="w-full h-[300px]">
+  <img src="{{settings.banner}}" alt="banner" class="w-full h-[300px] object-cover" />
+</section>
+
+<section id="main-content" class="flex-1 h-full pt-8 bg-white">
+  <div class="flex flex-col max-w-7xl mx-auto">
+    <div class="w-full px-4 lg:px-0">
+      <a href="{{page_path 'help_center'}}" class="flex items-center text-sm gap-2 text-fc-dark">
+        <i class="ph ph-caret-left text-md mt-0.5"></i>
+        {{dc "ea_fcm_hc_back_to_homepage_text"}}
+      </a>
+    </div>
+
+    <section class="flex-1 flex flex-col md:flex-row gap-4 px-4 lg:px-0 py-8">
+      <aside id="section-sidebar" class="w-full md:w-[25%] h-max menu rounded-box p-0 gap-2">
+        <div class="w-full flex flex-col items-start px-4 py-2">
+          <h5 class="text-xs text-fc-dark font-bold uppercase">
+            Ticket ID
+          </h5>
+          <p class="text-md text-fc-dark-green font-semibold">
+            {{request.id}}
+          </p>
+        </div>
+        <div class="w-full flex flex-col items-start px-4 py-2">
+          <h5 class="text-xs text-fc-dark font-bold uppercase">
+            Created
+          </h5>
+          <p class="text-md text-fc-dark-green font-semibold">
+            {{date request.created_at format="medium"}}
+          </p>
+        </div>
+        <div class="w-full flex flex-col items-start px-4 py-2">
+          <h5 class="text-xs text-fc-dark font-bold uppercase">
+            Last Activity
+          </h5>
+          <p class="text-md text-fc-dark-green font-semibold">
+            {{date request.updated_at timeago=true}}
+          </p>
+        </div>
+      </aside>
+
+      <section id="content" class="flex-1 flex flex-col px-0 md:px-4 py-4 md:py-0">
+        <div class="w-full flex flex-col border-b border-gray-400 gap-2 pb-4">
+          <a
+            href="{{page_path 'my_activities'}}"
+            class="flex items-center text-sm gap-2 text-fc-dark-green capitalize"
+          >
+            <i class="ph ph-caret-left text-md mt-0.5"></i>
+            {{t "my_requests"}}
+          </a>
+          <h3 class="text-fc-dark text-lg font-bold mt-4">
+            {{request.subject}}
+          </h3>
+          <p class="text-fc-dark text-sm">
+            {{request.description}}
+          </p>
+        </div>
+
+        <div class="flex-1 flex flex-col gap-2">
+          {{#each comments}}
+            {{#if (compare @index ">" 0)}}
+              <div id="{{anchor}}" class="w-full flex flex-col border-b border-gray-400 gap-2 p-4">
+                <div id="user-info" class="w-full flex items-center">
+                  <div class="avatar me-4">
+                    <div class="w-8 rounded-full">
+                      <img src="{{author.avatar_url}}" />
+                    </div>
+                  </div>
+                  <div class="text-fc-dark">
+                    <h5 class="text-sm font-bold">
+                      {{author.name}}
+                    </h5>
+                    <p class="text-xs">
+                      {{date created_at timeago=true}}
+                    </p>
+                  </div>
+                </div>
+
+                <div id="comment-body" class="text-sm text-fc-dark mt-4">
+                  {{body}}
+                </div>
+              </div>
+            {{/if}}
+          {{/each}}
+        </div>
+      </section>
+    </section>
+  </div>
+</section>

@@ -1,0 +1,121 @@
+<section id="banner" class="w-full h-[300px]">
+  <img src="{{settings.banner}}" alt="banner" class="w-full h-[300px] object-cover" />
+</section>
+
+<section id="main-content" class="flex-1 h-full pt-8 bg-white">
+  <div class="flex flex-col max-w-7xl mx-auto">
+    <div class="w-full px-4 lg:px-0">
+      <a href="{{page_path 'help_center'}}" class="flex items-center text-sm gap-2 text-fc-dark">
+        <i class="ph ph-caret-left text-md mt-0.5"></i>
+        {{dc "ea_fcm_hc_back_to_homepage_text"}}
+      </a>
+    </div>
+
+    <section class="flex-1 flex flex-col md:flex-row gap-4 px-4 lg:px-0 py-8">
+      <aside id="section-sidebar" class="w-full md:w-[25%] h-max menu rounded-box p-0 gap-2">
+        {{#form "requests_filter"}}
+          <label
+            class="input border border-fc-dark/50 focus:border-fc-dark-green focus:outline-fc-dark-green focus-within:outline-fc-green focus-within:border-fc-green flex items-center gap-2 bg-white"
+          >
+            <input
+              id="query-search"
+              type="text"
+              name="query"
+              class="grow text-sm font-semibold"
+              placeholder="Search"
+            />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+              class="h-4 w-4 opacity-70"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </label>
+          <select
+            id="status-selector"
+            name="status"
+            class="select border border-fc-dark/50 focus:border-fc-dark-green focus:outline-fc-dark-green focus-within:outline-fc-green focus-within:border-fc-green w-full max-w-xs mt-4 bg-white"
+          >
+            <option selected value="">Any</option>
+            <option value="open">Open</option>
+            <option value="answered">Awaiting Reply</option>
+            <option value="solved">Solved</option>
+          </select>
+          <button
+            type="submit"
+            class="btn btn-sm w-full bg-fc-green hover:bg-fc-green/85 border-none text-fc-dark mt-4"
+          >
+            Apply filters
+          </button>
+          <a
+            href="{{page_path 'my_activities'}}"
+            class="btn btn-sm w-full bg-fc-dark border-none text-white mt-2"
+          >
+            Reset filters
+          </a>
+        {{/form}}
+      </aside>
+
+      <section id="content" class="flex-1 flex flex-col px-0 md:px-4 py-4 md:py-0 gap-4">
+        <h3 class="text-fc-dark text-xl sm:text-4xl font-bold capitalize">
+          {{t "my_requests"}}
+        </h3>
+
+        <div class="overflow-x-auto mt-6">
+          {{#if requests}}
+            <table class="table">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th class="text-md text-fc-dark font-bold w-[40%]">
+                    Subject
+                  </th>
+                  <th class="text-md text-fc-dark font-bold w-[20%]">
+                    Ticket ID
+                  </th>
+                  <th class="text-md text-fc-dark font-bold w-[20%]">
+                    Last Updated
+                  </th>
+                  <th class="text-md text-fc-dark font-bold w-[20%]">
+                    Status
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row -->
+                {{#each requests}}
+                  <tr>
+                    <td>
+                      <a href="{{url}}" class="">
+                        {{#if subject}}
+                          {{subject}}
+                        {{else}}
+                          {{excerpt description characters=50}}
+                        {{/if}}
+                      </a>
+                    </td>
+                    <td>{{id}}</td>
+                    <td>
+                      {{date updated_at timeago=true}}
+                    </td>
+                    <td>{{status_name}}</td>
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          {{else}}
+            <p>
+              {{t "no_content"}}
+            </p>
+          {{/if}}
+        </div>
+      </section>
+    </section>
+  </div>
+</section>

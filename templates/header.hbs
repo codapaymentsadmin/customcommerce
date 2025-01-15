@@ -1,0 +1,105 @@
+{{!-- <a class="skip-navigation" tabindex="1" href="#main-content">
+	{{t "skip_navigation"}}
+</a> --}}
+
+<header class="w-full bg-fc-dark">
+	<nav class="navbar w-full md:max-w-7xl mx-auto py-4">
+		<div class="navbar-start w-max">
+			{{#link "help_center"}}
+				<img src="{{settings.brand_logo}}" alt="Logo" class="w-[150px]" />
+			{{/link}}
+		</div>
+		<div class="navbar-end flex-1">
+			<span class="fi fi-id md:!hidden text-xl"></span>
+			<div class="flex items-stretch">
+				<div
+					tabindex="0"
+					role="button"
+					id="mobile-dropdown-button"
+					class="btn btn-ghost md:hidden ms-auto"
+				>
+					<i class="ph ph-list text-white text-2xl"></i>
+				</div>
+			</div>
+
+			{{#if alternative_locales}}
+			<div class="hidden md:inline-block dropdown dropdown-end ms-4">
+				<div
+					tabindex="0"
+					role="button"
+					class="flex items-center justify-center p-2"
+				>
+					<span class="flex items-center text-white text-sm">
+						<i
+							class="ph ph-globe text-white text-xl me-2"
+						></i>
+						{{current_locale.name}}
+					</span>
+				</div>
+				<ul
+					tabindex="0"
+					class="dropdown-content menu bg-fc-dark border border-fc-green rounded-md z-[1] w-[200px] p-2 shadow mt-2"
+				>
+					{{#each alternative_locales}}
+						<li class="{{#if (compare @index ">" 0)}}mt-2{{/if}}">
+							<a
+								href="{{url}}"
+								dir="{{direction}}"
+								class="text-white text-sm hover:bg-fc-green px-2 py-3 rounded-md font-semibold"
+							>
+								{{name}}
+							</a>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+			{{/if}}
+
+			<a href="{{page_path 'new_request'}}" class="hidden md:inline-flex btn btn-link no-underline hover:no-underline text-white hover:text-fc-green px-2 me-2">
+				{{dc 'ea_fcm_hc_contact_us_text'}}
+			</a>
+
+			<span class="fi fi-id max-[768px]:!hidden md:inline-block text-xl"></span>
+		</div>
+	</nav>
+	<div
+		id="mobile-dropdown"
+		class="w-full p-4 hidden flex-col gap-2 bg-fc-dark"
+	>
+		{{#if alternative_locales}}
+			<div class="join join-vertical w-full">
+				<div class="collapse collapse-arrow join-item rounded-none">
+					<input type="checkbox" name="my-accordion-4" />
+					<div
+						class="collapse-title flex items-center text-sm text-white font-medium px-0"
+					>
+						<span class="flex items-center justify-center me-2">
+							<i class="ph ph-globe" style="font-size: 20px;"></i>
+						</span>
+						{{current_locale.name}}
+					</div>
+					<div class="collapse-content">
+						<div class="flex flex-col w-full gap-1.5">
+							{{#each alternative_locales}}
+								<a
+									href="{{url}}"
+									dir="{{direction}}"
+									class="text-white text-sm hover:bg-fc-green px-2 py-3 rounded-md font-semibold"
+								>
+									{{name}}
+								</a>
+							{{/each}}
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/if}}
+
+		<a
+			href="{{page_path 'new_request'}}"
+			class="text-sm text-white font-semibold hover:bg-fc-green px-0 py-2 rounded-md"
+		>
+			{{dc 'ea_fcm_hc_contact_us_text'}}
+		</a>
+	</div>
+</header>
