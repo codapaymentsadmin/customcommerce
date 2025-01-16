@@ -2,7 +2,7 @@
 	{{t "skip_navigation"}}
 </a> --}}
 
-<header class="w-full bg-fc-dark">
+<header class="w-full bg-ott-tertiary">
 	<nav class="navbar w-full md:max-w-7xl mx-auto py-4">
 		<div class="navbar-start w-max">
 			{{#link "help_center"}}
@@ -10,7 +10,6 @@
 			{{/link}}
 		</div>
 		<div class="navbar-end flex-1">
-			<span class="fi fi-id md:!hidden text-xl"></span>
 			<div class="flex items-stretch">
 				<div
 					tabindex="0"
@@ -38,14 +37,14 @@
 				</div>
 				<ul
 					tabindex="0"
-					class="dropdown-content menu bg-fc-dark border border-fc-green rounded-md z-[1] w-[200px] p-2 shadow mt-2"
+					class="dropdown-content menu bg-ott-tertiary border border-ott-secondary rounded-md z-[1] w-[200px] p-2 shadow mt-2"
 				>
 					{{#each alternative_locales}}
 						<li class="{{#if (compare @index ">" 0)}}mt-2{{/if}}">
 							<a
 								href="{{url}}"
 								dir="{{direction}}"
-								class="text-white text-sm hover:bg-fc-green px-2 py-3 rounded-md font-semibold"
+								class="text-white text-sm hover:bg-ott-secondary px-2 py-3 rounded-md font-semibold"
 							>
 								{{name}}
 							</a>
@@ -55,16 +54,14 @@
 			</div>
 			{{/if}}
 
-			<a href="{{page_path 'new_request'}}" class="hidden md:inline-flex btn btn-link no-underline hover:no-underline text-white hover:text-fc-green px-2 me-2">
+			<a href="{{page_path 'new_request'}}" class="hidden md:inline-flex btn btn-link no-underline hover:no-underline text-white hover:text-ott-secondary px-2 me-2">
 				Contact us
 			</a>
-
-			<span class="fi fi-id max-[768px]:!hidden md:inline-block text-xl"></span>
 		</div>
 	</nav>
 	<div
 		id="mobile-dropdown"
-		class="w-full p-4 hidden flex-col gap-2 bg-fc-dark"
+		class="w-full p-4 hidden flex-col gap-2 bg-ott-tertiary"
 	>
 		{{#if alternative_locales}}
 			<div class="join join-vertical w-full">
@@ -84,7 +81,7 @@
 								<a
 									href="{{url}}"
 									dir="{{direction}}"
-									class="text-white text-sm hover:bg-fc-green px-2 py-3 rounded-md font-semibold"
+									class="text-white text-sm hover:bg-ott-secondary px-2 py-3 rounded-md font-semibold"
 								>
 									{{name}}
 								</a>
@@ -97,7 +94,7 @@
 
 		<a
 			href="{{page_path 'new_request'}}"
-			class="text-sm text-white font-semibold hover:bg-fc-green px-0 py-2 rounded-md"
+			class="text-sm text-white font-semibold hover:bg-ott-secondary px-0 py-2 rounded-md"
 		>
 			Contact us
 		</a>

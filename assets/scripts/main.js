@@ -6,17 +6,8 @@ import "./new_request_page.js";
 document.addEventListener("DOMContentLoaded", () => {
   const mobileDropdown = document.getElementById("mobile-dropdown");
   const mobileDropdownButton = document.getElementById("mobile-dropdown-button");
-  const surveyModal = document.getElementById("survey-modal");
-  const closeSurveyModalBtn = document.getElementById("close-survey-modal");
   let windowWidth = window.innerWidth;
   let expandMobileDropdown = false;
-
-  if (surveyModal) {
-    setTimeout(() => {
-      surveyModal.classList.add("flex");
-      surveyModal.classList.remove("hidden");
-    }, 3000);
-  }
 
   window.addEventListener("load", () => {
     if (window.location.hash) {
@@ -62,10 +53,4 @@ document.addEventListener("DOMContentLoaded", () => {
   mobileDropdownButton.addEventListener("click", () => {
     toggleMobileDropdown();
   });
-
-  if (closeSurveyModalBtn) {
-    closeSurveyModalBtn.addEventListener("click", () => {
-      surveyModal.classList.add("hidden");
-    });
-  }
 });

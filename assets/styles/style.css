@@ -233,7 +233,7 @@ form footer input[type="submit"]:disabled {
 
 #article-content table tr td,
 #article-content table tr th {
-  @apply table-fixed border border-fc-dark p-4;
+  @apply table-fixed border border-ott-tertiary p-4;
 }
 
 #article-content table th.wysiwyg-indent1,

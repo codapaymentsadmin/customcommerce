@@ -8,7 +8,7 @@
 		class="w-full h-full flex items-center justify-center absolute top-0 px-4"
 	>
 		<label
-			class="input h-[32px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-fc-dark/50 bg-white focus:border-fc-green focus:outline-fc-green focus-within:outline-fc-green focus-within:border-fc-green"
+			class="input h-[32px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-ott-tertiary/50 bg-white focus:border-ott-secondary focus:outline-ott-secondary focus-within:outline-ott-secondary focus-within:border-ott-secondary"
 		>
 			{{search
 				instant=true
@@ -38,7 +38,7 @@
     <div class="w-full px-4 lg:px-0">
 			<a
 				href="{{page_path 'help_center'}}"
-				class="flex items-center text-sm gap-2 text-fc-dark"
+				class="flex items-center text-sm gap-2 text-ott-tertiary"
 			>
 				<i class="ph ph-caret-left text-md mt-0.5"></i>
 				Back to Homepage
@@ -55,7 +55,7 @@
         {{#each promoted_articles}}
           <a
             href="{{url}}"
-            class="btn flex-1 flex justify-start items-center btn-outline text-fc-dark btn-fc-green border-fc-green hover:border-fc-green hover:bg-fc-green text-start leading-4"
+            class="btn flex-1 flex justify-start items-center btn-outline text-ott-tertiary btn-ott-secondary border-ott-secondary hover:border-ott-secondary hover:bg-ott-secondary text-start leading-4"
           >
             {{title}}
           </a>
@@ -66,22 +66,22 @@
           {{t "preview_result_header" query=query}}
         </h2>
         {{#if results}}
-          <hr class="w-full border-1.5 border-fc-dark/50" />
+          <hr class="w-full border-1.5 border-ott-tertiary/50" />
           <div class="w-full flex flex-col gap-4 pt-4">
             {{#each results}}
               <div
                 class="flex-1 flex flex-col justify-start"
               >
-                <a href="{{url}}" class="text-lg text-fc-dark-green hover:text-fc-dark-green/85 transition-colors font-bold">
+                <a href="{{url}}" class="text-lg text-ott-primary hover:text-ott-primary/85 transition-colors font-bold">
                   {{title}}
                 </a>
-                <h6 class="text-xs text-fc-dark mt-1.5">
+                <h6 class="text-xs text-ott-tertiary mt-1.5">
                   by
                   <span class="font-semibold">
                     {{author.name}} &#x2022; {{date created_at format='medium'}}
                   </span>
                 </h6>
-                <p class="text-fc-dark mt-1.5">
+                <p class="text-ott-tertiary mt-1.5">
                   {{text}}
                 </p>
               </div>
@@ -89,7 +89,7 @@
           </div>
           {{pagination}}
           {{else}}
-          <p class="text-fc-dark font-semibold">
+          <p class="text-ott-tertiary font-semibold">
             {{t 'no_results_unified'}}
           </p>
         {{/if}}

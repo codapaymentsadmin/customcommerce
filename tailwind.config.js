@@ -3,9 +3,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "fc-dark-green": "#04953F",
-        "fc-green": "#07F468",
-        "fc-dark": "#1A1C19",
+        "ott-primary": "#04953F", // fc-dark-green
+        "ott-secondary": "#07F468", // fc-green
+        "ott-tertiary": "#1A1C19", // fc-dark
       },
       animation: {
         marquee: "marquee 30s linear infinite",

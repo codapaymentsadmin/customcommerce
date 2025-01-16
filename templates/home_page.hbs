@@ -6,7 +6,7 @@
   <img src="{{settings.banner}}" alt="banner" class="w-full h-[300px] object-cover" />
   <div class="w-full h-full flex items-center justify-center absolute top-0 px-4">
     <label
-      class="input h-[48px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-fc-dark/50 bg-white focus:border-fc-green focus:outline-fc-green focus-within:outline-fc-green focus-within:border-fc-green"
+      class="input h-[48px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-ott-tertiary/50 bg-white focus:border-ott-secondary focus:outline-ott-secondary focus-within:outline-ott-secondary focus-within:border-ott-secondary"
     >
       {{search
         instant=true
@@ -32,25 +32,25 @@
 <section id="main-content" class="w-full">
   <section id="channels" class="flex-1 bg-white py-8">
     <article class="flex-1 md:max-w-7xl mx-auto flex flex-col items-center px-4 xl:px-0">
-      <h3 class="text-2xl text-fc-dark md:text-3xl text-center font-bold">
+      <h3 class="text-2xl text-ott-tertiary md:text-3xl text-center font-bold">
         Get in touch with Customer Support
       </h3>
-      <p class="mt-2 text-fc-dark text-center">
+      <p class="mt-2 text-ott-tertiary text-center">
         Connect with our Customer Support team through any of the channels below.
       </p>
       <div class="w-full md:max-w-5xl flex justify-center items-center flex-wrap gap-2 mt-4">
         <a
           href="{{page_path 'new_request'}}"
-          class="btn w-max flex items-center transition-colors bg-fc-green hover:bg-fc-green/85 border-none text-fc-dark"
+          class="btn w-max flex items-center transition-colors bg-ott-secondary hover:bg-ott-secondary/85 border-none text-ott-tertiary"
         >
-          <i class="ph ph-envelope text-fc-dark text-2xl"></i>
+          <i class="ph ph-envelope text-ott-tertiary text-2xl"></i>
           <span>Contact via webform</span>
         </a>
         <a
           href="https://store.fcm.ea.com/in"
-          class="btn w-max flex items-center transition-colors bg-fc-green hover:bg-fc-green/85 border-none text-fc-dark"
+          class="btn w-max flex items-center transition-colors bg-ott-secondary hover:bg-ott-secondary/85 border-none text-ott-tertiary"
         >
-          <i class="ph ph-globe text-fc-dark text-2xl"></i>
+          <i class="ph ph-globe text-ott-tertiary text-2xl"></i>
           <span>Visit Topup Bhai</span>
         </a>
       </div>
@@ -59,10 +59,10 @@
 
   <section id="all-articles-section" class="flex-1 bg-white py-8">
     <article class="flex-1 md:max-w-7xl mx-auto flex flex-col px-4 xl:px-0">
-      <h3 class="text-2xl text-fc-dark md:text-3xl font-bold">
+      <h3 class="text-2xl text-ott-tertiary md:text-3xl font-bold">
         Explore our knowledge base
       </h3>
-      <p class="mt-2 text-fc-dark text-sm">
+      <p class="mt-2 text-ott-tertiary text-sm">
         Discover a variety of helpful articles in this section.
       </p>
 
@@ -70,13 +70,13 @@
         {{#each categories}}
           {{#each sections}}
             <div class="w-full flex flex-col gap-2">
-              <h4 class="font-bold text-fc-dark text-lg">{{name}}</h4>
+              <h4 class="font-bold text-ott-tertiary text-lg">{{name}}</h4>
               {{#each articles}}
                 {{#if (compare @index "<" 5)}}
                   <a
                     id="article-{{id}}"
                     href="{{url}}"
-                    class="btn btn-outline border-2 border-fc-green hover:border-fc-green hover:bg-fc-green w-full flex font-bold text-[14px] text-fc-dark text-start rounded-md overflow-x-hidden leading-normal"
+                    class="btn btn-outline border-2 border-ott-secondary hover:border-ott-secondary hover:bg-ott-secondary w-full flex font-bold text-[14px] text-ott-tertiary text-start rounded-md overflow-x-hidden leading-normal"
                   >
                     <span class="w-full line-clamp-1">
                       {{title}}
@@ -87,7 +87,7 @@
               {{#if (compare article_count ">" 5)}}
                 <a
                   href="{{url}}"
-                  class="btn btn-link no-underline hover:no-underline flex items-center w-max text-fc-dark-green/85 hover:text-fc-dark-green md:ms-auto"
+                  class="btn btn-link no-underline hover:no-underline flex items-center w-max text-ott-primary/85 hover:text-ott-primary md:ms-auto"
                 >
                   {{t "see_more"}}
                   <i class="ph ph-arrow-up-right"></i>
@@ -97,7 +97,7 @@
           {{/each}}
           <a
             href="{{url}}"
-            class="btn border-fc-dark-green bg-fc-dark-green/85 hover:bg-fc-dark-green text-white"
+            class="btn border-ott-primary bg-ott-primary/85 hover:bg-ott-primary text-white"
           >
             {{t "see_all_sections"}}
           </a>

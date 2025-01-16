@@ -5,14 +5,17 @@
 <section id="main-content" class="flex-1 h-full bg-white py-8">
   <div class="flex flex-col max-w-7xl mx-auto px-4 lg:px-0">
     <div class="w-full">
-      <a href="{{page_path 'help_center'}}" class="flex items-center text-sm text-fc-dark gap-2">
+      <a
+        href="{{page_path 'help_center'}}"
+        class="flex items-center text-sm text-ott-tertiary gap-2"
+      >
         <i class="ph ph-caret-left text-md mt-0.5"></i>
         Back to Homepage
       </a>
     </div>
 
     <section class="flex-1 flex flex-col gap-4 mt-4">
-      <h1 class="text-2xl text-fc-dark font-bold mt-8">
+      <h1 class="text-2xl text-ott-tertiary font-bold mt-8">
         {{t "submit_a_request"}}
       </h1>
 
@@ -20,10 +23,10 @@
         {{request_form}}
       </div>
 
-      <p id="ingame-warning" class="hidden text-fc-dark text-sm">
+      <!-- <p id="ingame-warning" class="hidden text-ott-tertiarytiarytiary text-sm">
         For in-game inquiries and transaction issues, please visit EA FC Mobile Help Center for
         further investigation
-      </p>
+      </p> -->
     </section>
   </div>
 </section>

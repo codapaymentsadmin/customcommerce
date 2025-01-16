@@ -3,7 +3,7 @@
 
   <div class="w-full h-full flex items-center justify-center absolute top-0 px-4">
     <label
-      class="input h-[32px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-fc-dark/50 bg-white focus:border-fc-green focus:outline-fc-green focus-within:outline-fc-green focus-within:border-fc-green"
+      class="input h-[32px] w-full md:w-[450px] lg:w-[500px] flex items-center mx-auto gap-2 rounded-full border border-ott-tertiary/50 bg-white focus:border-ott-secondary focus:outline-ott-secondary focus-within:outline-ott-secondary focus-within:border-ott-secondary"
     >
       {{search
         instant=true
@@ -28,25 +28,28 @@
 
 <section id="main-content" class="flex-1 h-full py-8 bg-white">
   <div class="flex flex-col max-w-7xl mx-auto px-4 lg:px-0">
-    <div class="w-full px-4 lg:px-0">
-      <a href="{{page_path 'help_center'}}" class="flex items-center text-sm gap-2 text-fc-dark">
+    <div class="w-full">
+      <a
+        href="{{page_path 'help_center'}}"
+        class="flex items-center text-sm gap-2 text-ott-tertiary"
+      >
         <i class="ph ph-caret-left text-md mt-0.5"></i>
         Back to Homepage
       </a>
     </div>
 
-    {{!-- <h2 class="text-xl md:text-2xl text-start text-fc-dark font-bold mt-4">
+    {{!-- <h2 class="text-xl md:text-2xl text-start text-ott-tertiary font-bold mt-4">
 			All
 			{{category.name}}
 			Topics
 		</h2>
-		<p class="text-md text-start text-fc-dark mt-2">
+		<p class="text-md text-start text-ott-tertiary mt-2">
 			{{category.description}}
 		</p> --}}
 
     {{#each sections}}
       <div class="w-full flex flex-col justify-start mt-8">
-        <h4 class="text-lg md:text-xl text-start text-fc-dark font-semibold">
+        <h4 class="text-lg md:text-xl text-start text-ott-tertiary font-semibold">
           {{name}}
         </h4>
         <div class="flex-1 flex flex-col">
@@ -56,7 +59,7 @@
                 <a
                   id="article-{{id}}"
                   href="{{url}}"
-                  class="btn btn-outline border-2 border-fc-green hover:border-fc-green hover:bg-fc-green w-full flex text-[14px] text-fc-dark font-bold text-start rounded-md overflow-x-hidden leading-normal"
+                  class="btn btn-outline border-2 border-ott-secondary hover:border-ott-secondary hover:bg-ott-secondary w-full flex text-[14px] text-ott-tertiary font-bold text-start rounded-md overflow-x-hidden leading-normal"
                 >
                   <span class="w-full line-clamp-1">
                     {{title}}
@@ -68,7 +71,7 @@
           {{#if (compare article_count ">" 5)}}
             <a
               href="{{url}}"
-              class="btn btn-link no-underline hover:no-underline flex items-center w-max text-fc-dark-green/85 hover:text-fc-dark-green pl-0"
+              class="btn btn-link no-underline hover:no-underline flex items-center w-max text-ott-primary/85 hover:text-ott-primary pl-0"
             >
               {{t "see_more"}}
               <i class="ph ph-arrow-up-right"></i>
