@@ -9,21 +9,21 @@
       "label": "brand_group_label",
       "variables": [
         {
-          "identifier": "brand_name",
-          "type": "text",
-          "description": "Enter the Brand Name",
-          "label": "Brand Name"
+          "identifier": "logo",
+          "type": "file",
+          "description": "Topup Bhai OTT Logo",
+          "label": "Brand Logo"
         },
         {
-          "identifier": "brand_logo",
+          "identifier": "favicon",
           "type": "file",
-          "description": "Enter the Brand Logo",
-          "label": "Brand Logo"
+          "description": "Icon displayed in the address bar of your browser",
+          "label": "Brand Favicon"
         },
         {
           "identifier": "banner",
           "type": "file",
-          "description": "Enter the Brand Banner",
+          "description": "Banner for top section",
           "label": "Brand Banner"
         }
       ]
