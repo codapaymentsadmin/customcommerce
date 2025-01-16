@@ -1,12 +1,12 @@
 {
   "name": "OTT Commerce Theme",
-  "author": "Reza Firdaus",
+  "author": "Operations Optimization",
   "version": "1.0.0",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
     {
-      "label": "Brand",
+      "label": "brand_group_label",
       "variables": [
         {
           "identifier": "brand_name",
