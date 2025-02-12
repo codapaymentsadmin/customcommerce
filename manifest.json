@@ -1,7 +1,7 @@
 {
   "name": "OTT Commerce Theme",
   "author": "Operations Optimization",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "api_version": 3,
   "default_locale": "en-us",
   "settings": [
@@ -11,7 +11,7 @@
         {
           "identifier": "logo",
           "type": "file",
-          "description": "Topup Bhai OTT Logo",
+          "description": "FCM OTT Logo",
           "label": "Brand Logo"
         },
         {
