@@ -2840,14 +2840,14 @@ details.collapse summary::-webkit-details-marker {
   background-color: rgb(7 244 104 / var(--tw-bg-opacity, 1));
 }
 
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
 .bg-ott-tertiary {
   --tw-bg-opacity: 1;
   background-color: rgb(26 28 25 / var(--tw-bg-opacity, 1));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-gradient-to-r {
@@ -3026,14 +3026,14 @@ details.collapse summary::-webkit-details-marker {
   color: rgb(4 149 63 / 0.85);
 }
 
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
 .text-ott-tertiary {
   --tw-text-opacity: 1;
   color: rgb(26 28 25 / var(--tw-text-opacity, 1));
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
 .underline {
@@ -3479,12 +3479,6 @@ form footer input[type="submit"]:disabled {
   outline-color: #07F468;
 }
 
-@media (max-width: 768px) {
-  .max-\[768px\]\:\!hidden {
-    display: none !important;
-  }
-}
-
 @media (min-width: 640px) {
   .sm\:w-\[250px\] {
     width: 250px;
@@ -3507,10 +3501,6 @@ form footer input[type="submit"]:disabled {
 
   .md\:inline-flex {
     display: inline-flex;
-  }
-
-  .md\:\!hidden {
-    display: none !important;
   }
 
   .md\:hidden {

@@ -11,7 +11,7 @@
 		"build": "vite build",
 		"build:css": "npx tailwindcss -i ./assets/styles/style.css -o ./style.css --watch",
 		"preview:all": "vite build --watch && npx tailwindcss -i ./assets/styles/style.css -o ./style.css --watch",
-		"preview:zcli": "zcli themes:preview --port=5500"
+		"preview:zcli": "zcli themes:preview"
 	},
 	"keywords": [],
 	"author": "",
